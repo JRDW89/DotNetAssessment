@@ -58,6 +58,7 @@ namespace FileData.Tests
                         if (currentValue > 0 && currentValue <= 8)
                         {
                             Console.WriteLine("Value" + i + " 0-8 True");
+                            flag = true;
                         }
                         else
                         {
@@ -69,6 +70,7 @@ namespace FileData.Tests
                         if (currentValue > 0 && currentValue <= 22)
                         {
                             Console.WriteLine("Value" + i + " 0-22 True");
+                            flag = true;
                         }
                         else
                         {
@@ -77,14 +79,18 @@ namespace FileData.Tests
                         }
                         break;
                     default:
+                        flag = false;
                         Assert.Fail();
                         break;
-                                         
                 }
             }
             if (flag)
             {
                 Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.Fail();
             }
 
             returnValue = null;
@@ -126,6 +132,7 @@ namespace FileData.Tests
                         if (currentValue > 0 && currentValue <= 8)
                         {
                             Console.WriteLine("Value" + i + " 0-8 True");
+                            flag = true;
                         }
                         else
                         {
@@ -137,6 +144,7 @@ namespace FileData.Tests
                         if (currentValue > 0 && currentValue <= 22)
                         {
                             Console.WriteLine("Value" + i + " 0-22 True");
+                            flag = true;
                         }
                         else
                         {
@@ -145,14 +153,18 @@ namespace FileData.Tests
                         }
                         break;
                     default:
+                        flag = false;
                         Assert.Fail();
                         break;
-
                 }
             }
             if (flag)
             {
                 Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.Fail();
             }
 
             returnValue = null;
@@ -194,6 +206,7 @@ namespace FileData.Tests
                         if (currentValue > 0 && currentValue <= 8)
                         {
                             Console.WriteLine("Value" + i + " 0-8 True");
+                            flag = true;
                         }
                         else
                         {
@@ -205,6 +218,7 @@ namespace FileData.Tests
                         if (currentValue > 0 && currentValue <= 22)
                         {
                             Console.WriteLine("Value" + i + " 0-22 True");
+                            flag = true;
                         }
                         else
                         {
@@ -213,14 +227,18 @@ namespace FileData.Tests
                         }
                         break;
                     default:
+                        flag = false;
                         Assert.Fail();
                         break;
-
                 }
             }
             if (flag)
             {
                 Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.Fail();
             }
 
             returnValue = null;
@@ -262,6 +280,7 @@ namespace FileData.Tests
                         if (currentValue > 0 && currentValue <= 8)
                         {
                             Console.WriteLine("Value" + i + " 0-8 True");
+                            flag = true;
                         }
                         else
                         {
@@ -273,6 +292,7 @@ namespace FileData.Tests
                         if (currentValue > 0 && currentValue <= 22)
                         {
                             Console.WriteLine("Value" + i + " 0-22 True");
+                            flag = true;
                         }
                         else
                         {
@@ -281,14 +301,18 @@ namespace FileData.Tests
                         }
                         break;
                     default:
+                        flag = false;
                         Assert.Fail();
                         break;
-
                 }
             }
             if (flag)
             {
                 Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.Fail();
             }
 
             returnValue = null;
@@ -297,35 +321,65 @@ namespace FileData.Tests
             flag = false;
         }
 
-        /*Params:
-        * v1 = "-v"
-        * v2 = "--v"
-        * v3 = "/ v"
-        * v4 = "/v"
-        */
 
         [TestMethod()]
         public void testMethodUsing_s1()
         {
-
+            int returnValue = 0;
+            returnValue = int.Parse(Program.method("", "-s"));
+            if(returnValue <= 200000)
+            {
+                Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.Fail();
+            }
         }
 
         [TestMethod()]
         public void testMethodUsing_s2()
         {
-
+            int returnValue = 0;
+            returnValue = int.Parse(Program.method("", "--s"));
+            if (returnValue <= 200000)
+            {
+                Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.Fail();
+            }
         }
 
         [TestMethod()]
         public void testMethodUsing_s3()
         {
-
+            int returnValue = 0;
+            returnValue = int.Parse(Program.method("", "/ s"));
+            if (returnValue <= 200000)
+            {
+                Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.Fail();
+            }
         }
 
         [TestMethod()]
         public void testMethodUsing_s4()
         {
-
+            int returnValue = 0;
+            returnValue = int.Parse(Program.method("", "/s"));
+            if (returnValue <= 200000)
+            {
+                Assert.IsTrue(true);
+            }
+            else
+            {
+                Assert.Fail();
+            }
         }
 
     }
